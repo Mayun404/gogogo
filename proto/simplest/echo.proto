@@ -1,0 +1,16 @@
+syntax = "proto3";
+package demo.simplest;
+
+option go_package = "hello/proto/simplest";
+
+message HelloRequest {
+  string id = 1;
+}
+
+message HelloResponse {
+  string name = 1;
+}
+
+service HelloWorld {
+  rpc Hello(HelloRequest) returns (HelloResponse); // @alias=/demo/Hello
+}

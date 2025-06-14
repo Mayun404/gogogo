@@ -1,0 +1,10 @@
+server:
+  service:
+    - name: demo.simplest.HelloWorld
+      nic: eth0
+      # ip: 127.0.0.1
+      ip: 0.0.0.0
+      port: 8000
+      network: tcp
+      protocol: http
+      timeout: 1800
