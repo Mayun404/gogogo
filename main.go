@@ -3,10 +3,12 @@ package main
 import (
 	"context"
 	"database/sql"
+	"log"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"trpc.group/trpc-go/trpc-go"
+
 	// proto package 的路径请读者自行调整
 	"hello/proto/simplest"
 
@@ -35,6 +37,9 @@ type helloWorldImpl struct{}
 func (helloWorldImpl) Hello(ctx context.Context, req *simplest.HelloRequest) (*simplest.HelloResponse, error) {
 	// 1. 从请求中获取ID
 	id := req.GetId()
+
+	g1 := 5
+	g1 += 1
 
 	// 2. 查询数据库
 	db, err := sql.Open("mysql", "root:12345678@tcp(127.0.0.1:3306)/db?charset=utf8mb4")
