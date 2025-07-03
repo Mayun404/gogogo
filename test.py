@@ -1,1 +1,1 @@
-printf("test")
+printf("main2")
